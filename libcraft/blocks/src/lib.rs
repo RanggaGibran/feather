@@ -7,6 +7,9 @@ mod block_properties;
 mod behaviors;
 mod registration;
 mod block_transitions;
+mod block_ticking;
+mod tick_executor;
+mod chunk_integration;
 
 pub use block::BlockKind;
 pub use block_data::*;
@@ -16,6 +19,9 @@ pub use block_properties::{BlockProperties, BlockBehavior, DefaultBlockBehavior}
 pub use behaviors::{DoorBehavior, ChestBehavior, RedstoneBehavior, get_behavior_for_block};
 pub use registration::BlockRegistry;
 pub use block_transitions::{BlockTransitionManager, BlockStateTransition, TransitionCondition};
+pub use block_ticking::{BlockTickScheduler, BlockTick, TickType};
+pub use tick_executor::BlockTickExecutor;
+pub use chunk_integration::BlockWorldIntegration;
 
 // Add a convenience method to BlockKind
 impl BlockKind {
@@ -108,6 +114,20 @@ impl BlockKind {
         
         props
     }
+    
+    /// Check if this block can receive random ticks
+    pub fn receives_random_ticks(&self) -> bool {
+        match self {
+            // List blocks that should receive random ticks
+            BlockKind::Copper | BlockKind::ExposedCopper | BlockKind::WeatheredCopper => true,
+            BlockKind::CutCopper | BlockKind::ExposedCutCopper | BlockKind::WeatheredCutCopper => true,
+            BlockKind::CutCopperStairs | BlockKind::ExposedCutCopperStairs | BlockKind::WeatheredCutCopperStairs => true,
+            BlockKind::CutCopperSlab | BlockKind::ExposedCutCopperSlab | BlockKind::WeatheredCutCopperSlab => true,
+            BlockKind::BuddingAmethyst => true,
+            BlockKind::PointedDripstone => true,
+            _ => false,
+        }
+    }
 }
 
 pub fn initialize_block_registry() -> BlockRegistry {
@@ -158,4 +178,19 @@ pub fn initialize_block_transitions() -> BlockTransitionManager {
     // Add more transition registrations here
     
     manager
+}
+
+/// Initialize a new BlockTickExecutor with default settings
+pub fn initialize_block_tick_executor() -> BlockTickExecutor {
+    // Default random tick speed (3 is Minecraft's default)
+    let random_tick_speed = 3;
+    let transition_manager = initialize_block_transitions();
+    
+    BlockTickExecutor::new(random_tick_speed, transition_manager)
+}
+
+// Helper function to create a BlockWorldIntegration
+pub fn initialize_block_world_integration() -> BlockWorldIntegration {
+    let tick_executor = initialize_block_tick_executor();
+    BlockWorldIntegration::new(tick_executor)
 }
