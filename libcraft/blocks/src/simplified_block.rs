@@ -354,6 +354,119 @@ pub enum SimplifiedBlockKind {
     ChiseledNetherBricks,
     CrackedNetherBricks,
     QuartzBricks,
+
+    // New 1.17 blocks
+    Copper,
+    ExposedCopper,
+    WeatheredCopper,
+    OxidizedCopper,
+    CutCopper,
+    ExposedCutCopper,
+    WeatheredCutCopper,
+    OxidizedCutCopper,
+    CutCopperStairs,
+    ExposedCutCopperStairs,
+    WeatheredCutCopperStairs,
+    OxidizedCutCopperStairs,
+    CutCopperSlab,
+    ExposedCutCopperSlab,
+    WeatheredCutCopperSlab,
+    OxidizedCutCopperSlab,
+    WaxedCopper,
+    WaxedExposedCopper,
+    WaxedWeatheredCopper,
+    WaxedOxidizedCopper,
+    WaxedCutCopper,
+    WaxedExposedCutCopper,
+    WaxedWeatheredCutCopper,
+    WaxedOxidizedCutCopper,
+    WaxedCutCopperStairs,
+    WaxedExposedCutCopperStairs,
+    WaxedWeatheredCutCopperStairs,
+    WaxedOxidizedCutCopperStairs,
+    WaxedCutCopperSlab,
+    WaxedExposedCutCopperSlab,
+    WaxedWeatheredCutCopperSlab,
+    WaxedOxidizedCutCopperSlab,
+
+    Deepslate,
+    CobbledDeepslate,
+    PolishedDeepslate,
+    DeepslateBricks,
+    DeepslateTiles,
+    CrackedDeepslateBricks,
+    CrackedDeepslateTiles,
+    ChiseledDeepslate,
+    DeepslateCoalOre,
+    DeepslateIronOre,
+    DeepslateGoldOre,
+    DeepslateDiamondOre,
+    DeepslateLapisOre,
+    DeepslateRedstoneOre,
+    DeepslateEmeraldOre,
+    DeepslateCopperOre,
+
+    AmethystBlock,
+    AmethystCluster,
+    SmallAmethystBud,
+    MediumAmethystBud,
+    LargeAmethystBud,
+    AmethystGeode,
+    BuddingAmethyst,
+
+    TintedGlass,
+
+    Candle,
+    WhiteCandle,
+    OrangeCandle,
+    MagentaCandle,
+    LightBlueCandle,
+    YellowCandle,
+    LimeCandle,
+    PinkCandle,
+    GrayCandle,
+    LightGrayCandle,
+    CyanCandle,
+    PurpleCandle,
+    BlueCandle,
+    BrownCandle,
+    GreenCandle,
+    RedCandle,
+    BlackCandle,
+
+    PointedDripstone,
+    DripstoneBlock,
+
+    MossBlock,
+    MossCarpet,
+
+    RootedDirt,
+    HangingRoots,
+    SporeBlossoms,
+    CaveVines,
+    CaveVinesPlant,
+    BigDripleaf,
+    BigDripleafStem,
+    SmallDripleaf,
+    AzaleaLeaves,
+    FloweringAzaleaLeaves,
+    Azalea,
+    FloweringAzalea,
+
+    LightningRod,
+
+    RawIronBlock,
+    RawGoldBlock,
+    RawCopperBlock,
+
+    PowderSnowCauldron,
+    PowderSnow,
+
+    SmoothBasalt,
+    Calcite,
+    TuffBlock,
+
+    GlowLichen,
 }
 
 #[allow(warnings)]
@@ -1141,6 +1254,129 @@ impl BlockKind {
             BlockKind::ChiseledNetherBricks => SimplifiedBlockKind::ChiseledNetherBricks,
             BlockKind::CrackedNetherBricks => SimplifiedBlockKind::CrackedNetherBricks,
             BlockKind::QuartzBricks => SimplifiedBlockKind::QuartzBricks,
+
+            // New 1.17 blocks
+            BlockKind::Copper => SimplifiedBlockKind::Copper,
+            BlockKind::ExposedCopper => SimplifiedBlockKind::ExposedCopper,
+            BlockKind::WeatheredCopper => SimplifiedBlockKind::WeatheredCopper,
+            BlockKind::OxidizedCopper => SimplifiedBlockKind::OxidizedCopper,
+            BlockKind::CutCopper => SimplifiedBlockKind::CutCopper,
+            BlockKind::ExposedCutCopper => SimplifiedBlockKind::ExposedCutCopper,
+            BlockKind::WeatheredCutCopper => SimplifiedBlockKind::WeatheredCutCopper,
+            BlockKind::OxidizedCutCopper => SimplifiedBlockKind::OxidizedCutCopper,
+            BlockKind::CutCopperStairs => SimplifiedBlockKind::CutCopperStairs,
+            BlockKind::ExposedCutCopperStairs => SimplifiedBlockKind::ExposedCutCopperStairs,
+            BlockKind::WeatheredCutCopperStairs => SimplifiedBlockKind::WeatheredCutCopperStairs,
+            BlockKind::OxidizedCutCopperStairs => SimplifiedBlockKind::OxidizedCutCopperStairs,
+            BlockKind::CutCopperSlab => SimplifiedBlockKind::CutCopperSlab,
+            BlockKind::ExposedCutCopperSlab => SimplifiedBlockKind::ExposedCutCopperSlab,
+            BlockKind::WeatheredCutCopperSlab => SimplifiedBlockKind::WeatheredCutCopperSlab,
+            BlockKind::OxidizedCutCopperSlab => SimplifiedBlockKind::OxidizedCutCopperSlab,
+            BlockKind::WaxedCopper => SimplifiedBlockKind::WaxedCopper,
+            BlockKind::WaxedExposedCopper => SimplifiedBlockKind::WaxedExposedCopper,
+            BlockKind::WaxedWeatheredCopper => SimplifiedBlockKind::WaxedWeatheredCopper,
+            BlockKind::WaxedOxidizedCopper => SimplifiedBlockKind::WaxedOxidizedCopper,
+            BlockKind::WaxedCutCopper => SimplifiedBlockKind::WaxedCutCopper,
+            BlockKind::WaxedExposedCutCopper => SimplifiedBlockKind::WaxedExposedCutCopper,
+            BlockKind::WaxedWeatheredCutCopper => SimplifiedBlockKind::WaxedWeatheredCutCopper,
+            BlockKind::WaxedOxidizedCutCopper => SimplifiedBlockKind::WaxedOxidizedCutCopper,
+            BlockKind::WaxedCutCopperStairs => SimplifiedBlockKind::WaxedCutCopperStairs,
+            BlockKind::WaxedExposedCutCopperStairs => {
+                SimplifiedBlockKind::WaxedExposedCutCopperStairs
+            }
+            BlockKind::WaxedWeatheredCutCopperStairs => {
+                SimplifiedBlockKind::WaxedWeatheredCutCopperStairs
+            }
+            BlockKind::WaxedOxidizedCutCopperStairs => {
+                SimplifiedBlockKind::WaxedOxidizedCutCopperStairs
+            }
+            BlockKind::WaxedCutCopperSlab => SimplifiedBlockKind::WaxedCutCopperSlab,
+            BlockKind::WaxedExposedCutCopperSlab => SimplifiedBlockKind::WaxedExposedCutCopperSlab,
+            BlockKind::WaxedWeatheredCutCopperSlab => {
+                SimplifiedBlockKind::WaxedWeatheredCutCopperSlab
+            }
+            BlockKind::WaxedOxidizedCutCopperSlab => {
+                SimplifiedBlockKind::WaxedOxidizedCutCopperSlab
+            }
+
+            BlockKind::Deepslate => SimplifiedBlockKind::Deepslate,
+            BlockKind::CobbledDeepslate => SimplifiedBlockKind::CobbledDeepslate,
+            BlockKind::PolishedDeepslate => SimplifiedBlockKind::PolishedDeepslate,
+            BlockKind::DeepslateBricks => SimplifiedBlockKind::DeepslateBricks,
+            BlockKind::DeepslateTiles => SimplifiedBlockKind::DeepslateTiles,
+            BlockKind::CrackedDeepslateBricks => SimplifiedBlockKind::CrackedDeepslateBricks,
+            BlockKind::CrackedDeepslateTiles => SimplifiedBlockKind::CrackedDeepslateTiles,
+            BlockKind::ChiseledDeepslate => SimplifiedBlockKind::ChiseledDeepslate,
+            BlockKind::DeepslateCoalOre => SimplifiedBlockKind::DeepslateCoalOre,
+            BlockKind::DeepslateIronOre => SimplifiedBlockKind::DeepslateIronOre,
+            BlockKind::DeepslateGoldOre => SimplifiedBlockKind::DeepslateGoldOre,
+            BlockKind::DeepslateDiamondOre => SimplifiedBlockKind::DeepslateDiamondOre,
+            BlockKind::DeepslateLapisOre => SimplifiedBlockKind::DeepslateLapisOre,
+            BlockKind::DeepslateRedstoneOre => SimplifiedBlockKind::DeepslateRedstoneOre,
+            BlockKind::DeepslateEmeraldOre => SimplifiedBlockKind::DeepslateEmeraldOre,
+            BlockKind::DeepslateCopperOre => SimplifiedBlockKind::DeepslateCopperOre,
+
+            BlockKind::AmethystBlock => SimplifiedBlockKind::AmethystBlock,
+            BlockKind::AmethystCluster => SimplifiedBlockKind::AmethystCluster,
+            BlockKind::SmallAmethystBud => SimplifiedBlockKind::SmallAmethystBud,
+            BlockKind::MediumAmethystBud => SimplifiedBlockKind::MediumAmethystBud,
+            BlockKind::LargeAmethystBud => SimplifiedBlockKind::LargeAmethystBud,
+            BlockKind::AmethystGeode => SimplifiedBlockKind::AmethystGeode,
+            BlockKind::BuddingAmethyst => SimplifiedBlockKind::BuddingAmethyst,
+
+            BlockKind::TintedGlass => SimplifiedBlockKind::TintedGlass,
+
+            BlockKind::Candle => SimplifiedBlockKind::Candle,
+            BlockKind::WhiteCandle => SimplifiedBlockKind::WhiteCandle,
+            BlockKind::OrangeCandle => SimplifiedBlockKind::OrangeCandle,
+            BlockKind::MagentaCandle => SimplifiedBlockKind::MagentaCandle,
+            BlockKind::LightBlueCandle => SimplifiedBlockKind::LightBlueCandle,
+            BlockKind::YellowCandle => SimplifiedBlockKind::YellowCandle,
+            BlockKind::LimeCandle => SimplifiedBlockKind::LimeCandle,
+            BlockKind::PinkCandle => SimplifiedBlockKind::PinkCandle,
+            BlockKind::GrayCandle => SimplifiedBlockKind::GrayCandle,
+            BlockKind::LightGrayCandle => SimplifiedBlockKind::LightGrayCandle,
+            BlockKind::CyanCandle => SimplifiedBlockKind::CyanCandle,
+            BlockKind::PurpleCandle => SimplifiedBlockKind::PurpleCandle,
+            BlockKind::BlueCandle => SimplifiedBlockKind::BlueCandle,
+            BlockKind::BrownCandle => SimplifiedBlockKind::BrownCandle,
+            BlockKind::GreenCandle => SimplifiedBlockKind::GreenCandle,
+            BlockKind::RedCandle => SimplifiedBlockKind::RedCandle,
+            BlockKind::BlackCandle => SimplifiedBlockKind::BlackCandle,
+
+            BlockKind::PointedDripstone => SimplifiedBlockKind::PointedDripstone,
+            BlockKind::DripstoneBlock => SimplifiedBlockKind::DripstoneBlock,
+
+            BlockKind::MossBlock => SimplifiedBlockKind::MossBlock,
+            BlockKind::MossCarpet => SimplifiedBlockKind::MossCarpet,
+
+            BlockKind::RootedDirt => SimplifiedBlockKind::RootedDirt,
+            BlockKind::HangingRoots => SimplifiedBlockKind::HangingRoots,
+            BlockKind::SporeBlossoms => SimplifiedBlockKind::SporeBlossoms,
+            BlockKind::CaveVines => SimplifiedBlockKind::CaveVines,
+            BlockKind::CaveVinesPlant => SimplifiedBlockKind::CaveVinesPlant,
+            BlockKind::BigDripleaf => SimplifiedBlockKind::BigDripleaf,
+            BlockKind::BigDripleafStem => SimplifiedBlockKind::BigDripleafStem,
+            BlockKind::SmallDripleaf => SimplifiedBlockKind::SmallDripleaf,
+            BlockKind::AzaleaLeaves => SimplifiedBlockKind::AzaleaLeaves,
+            BlockKind::FloweringAzaleaLeaves => SimplifiedBlockKind::FloweringAzaleaLeaves,
+            BlockKind::Azalea => SimplifiedBlockKind::Azalea,
+            BlockKind::FloweringAzalea => SimplifiedBlockKind::FloweringAzalea,
+
+            BlockKind::LightningRod => SimplifiedBlockKind::LightningRod,
+
+            BlockKind::RawIronBlock => SimplifiedBlockKind::RawIronBlock,
+            BlockKind::RawGoldBlock => SimplifiedBlockKind::RawGoldBlock,
+            BlockKind::RawCopperBlock => SimplifiedBlockKind::RawCopperBlock,
+
+            BlockKind::PowderSnowCauldron => SimplifiedBlockKind::PowderSnowCauldron,
+            BlockKind::PowderSnow => SimplifiedBlockKind::PowderSnow,
+
+            BlockKind::SmoothBasalt => SimplifiedBlockKind::SmoothBasalt,
+            BlockKind::Calcite => SimplifiedBlockKind::Calcite,
+            BlockKind::TuffBlock => SimplifiedBlockKind::TuffBlock,
+
+            BlockKind::GlowLichen => SimplifiedBlockKind::GlowLichen,
         }
     }
 }

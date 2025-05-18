@@ -1,6 +1,6 @@
 // This file is @generated. Please do not edit.
 
-#[derive(Copy, Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum EntityKind {
     AreaEffectCloud,
     ArmorStand,
@@ -110,8 +110,13 @@ pub enum EntityKind {
     ZombifiedPiglin,
     Player,
     FishingBobber,
-}
 
+    // New entities in 1.17
+    Axolotl,
+    Goat,
+    GlowSquid,
+    Marker,
+}
 #[allow(warnings)]
 #[allow(clippy::all)]
 impl EntityKind {
@@ -226,6 +231,10 @@ impl EntityKind {
             EntityKind::ZombifiedPiglin => 105,
             EntityKind::Player => 106,
             EntityKind::FishingBobber => 107,
+            EntityKind::Axolotl => 108,
+            EntityKind::Goat => 109,
+            EntityKind::GlowSquid => 110,
+            EntityKind::Marker => 111,
         }
     }
 
@@ -340,6 +349,10 @@ impl EntityKind {
             105 => Some(EntityKind::ZombifiedPiglin),
             106 => Some(EntityKind::Player),
             107 => Some(EntityKind::FishingBobber),
+            108 => Some(EntityKind::Axolotl),
+            109 => Some(EntityKind::Goat),
+            110 => Some(EntityKind::GlowSquid),
+            111 => Some(EntityKind::Marker),
             _ => None,
         }
     }
@@ -458,6 +471,10 @@ impl EntityKind {
             EntityKind::ZombifiedPiglin => 105,
             EntityKind::Player => 106,
             EntityKind::FishingBobber => 107,
+            EntityKind::Axolotl => 108,
+            EntityKind::Goat => 109,
+            EntityKind::GlowSquid => 110,
+            EntityKind::Marker => 111,
         }
     }
 
@@ -572,6 +589,10 @@ impl EntityKind {
             105 => Some(EntityKind::ZombifiedPiglin),
             106 => Some(EntityKind::Player),
             107 => Some(EntityKind::FishingBobber),
+            108 => Some(EntityKind::Axolotl),
+            109 => Some(EntityKind::Goat),
+            110 => Some(EntityKind::GlowSquid),
+            111 => Some(EntityKind::Marker),
             _ => None,
         }
     }
@@ -690,6 +711,10 @@ impl EntityKind {
             EntityKind::ZombifiedPiglin => "zombified_piglin",
             EntityKind::Player => "player",
             EntityKind::FishingBobber => "fishing_bobber",
+            EntityKind::Axolotl => "axolotl",
+            EntityKind::Goat => "goat",
+            EntityKind::GlowSquid => "glow_squid",
+            EntityKind::Marker => "marker",
         }
     }
 
@@ -804,6 +829,10 @@ impl EntityKind {
             "zombified_piglin" => Some(EntityKind::ZombifiedPiglin),
             "player" => Some(EntityKind::Player),
             "fishing_bobber" => Some(EntityKind::FishingBobber),
+            "axolotl" => Some(EntityKind::Axolotl),
+            "goat" => Some(EntityKind::Goat),
+            "glow_squid" => Some(EntityKind::GlowSquid),
+            "marker" => Some(EntityKind::Marker),
             _ => None,
         }
     }
@@ -922,6 +951,10 @@ impl EntityKind {
             EntityKind::ZombifiedPiglin => "Zombified Piglin",
             EntityKind::Player => "Player",
             EntityKind::FishingBobber => "Fishing Bobber",
+            EntityKind::Axolotl => "Axolotl",
+            EntityKind::Goat => "Goat",
+            EntityKind::GlowSquid => "Glow Squid",
+            EntityKind::Marker => "Marker",
         }
     }
 
@@ -1036,6 +1069,10 @@ impl EntityKind {
             "Zombified Piglin" => Some(EntityKind::ZombifiedPiglin),
             "Player" => Some(EntityKind::Player),
             "Fishing Bobber" => Some(EntityKind::FishingBobber),
+            "Axolotl" => Some(EntityKind::Axolotl),
+            "Goat" => Some(EntityKind::Goat),
+            "Glow Squid" => Some(EntityKind::GlowSquid),
+            "Marker" => Some(EntityKind::Marker),
             _ => None,
         }
     }
@@ -1477,6 +1514,22 @@ impl EntityKind {
             EntityKind::FishingBobber => vek::Aabb {
                 min: vek::Vec3::zero(),
                 max: vek::Vec3::new(0.25 as f64, 0.25 as f64, 0.25 as f64),
+            },
+            EntityKind::Axolotl => vek::Aabb {
+                min: vek::Vec3::zero(),
+                max: vek::Vec3::new(1 as f64, 0.6 as f64, 1 as f64),
+            },
+            EntityKind::Goat => vek::Aabb {
+                min: vek::Vec3::zero(),
+                max: vek::Vec3::new(0.9 as f64, 1.3 as f64, 0.9 as f64),
+            },
+            EntityKind::GlowSquid => vek::Aabb {
+                min: vek::Vec3::zero(),
+                max: vek::Vec3::new(0.8 as f64, 0.8 as f64, 0.8 as f64),
+            },
+            EntityKind::Marker => vek::Aabb {
+                min: vek::Vec3::zero(),
+                max: vek::Vec3::new(0 as f64, 0 as f64, 0 as f64),
             },
         }
     }

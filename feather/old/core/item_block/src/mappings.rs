@@ -1,5 +1,6 @@
 use feather_blocks::*;
 use feather_items::Item;
+
 pub fn item_to_block(item: Item) -> Option<BlockId> {
     match item {
         Item::Air => Some(BlockId::air()),
@@ -520,9 +521,111 @@ pub fn item_to_block(item: Item) -> Option<BlockId> {
         Item::GreenBanner => Some(BlockId::green_banner()),
         Item::RedBanner => Some(BlockId::red_banner()),
         Item::BlackBanner => Some(BlockId::black_banner()),
-        _ => None,
+        
+        // New 1.17 items that correspond to blocks
+        Item::Copper => Some(BlockId::copper()),
+        Item::ExposedCopper => Some(BlockId::exposed_copper()),
+        Item::WeatheredCopper => Some(BlockId::weathered_copper()),
+        Item::OxidizedCopper => Some(BlockId::oxidized_copper()),
+        Item::CutCopper => Some(BlockId::cut_copper()),
+        Item::ExposedCutCopper => Some(BlockId::exposed_cut_copper()),
+        Item::WeatheredCutCopper => Some(BlockId::weathered_cut_copper()),
+        Item::OxidizedCutCopper => Some(BlockId::oxidized_cut_copper()),
+        Item::CutCopperStairs => Some(BlockId::cut_copper_stairs()),
+        Item::ExposedCutCopperStairs => Some(BlockId::exposed_cut_copper_stairs()),
+        Item::WeatheredCutCopperStairs => Some(BlockId::weathered_cut_copper_stairs()),
+        Item::OxidizedCutCopperStairs => Some(BlockId::oxidized_cut_copper_stairs()),
+        Item::CutCopperSlab => Some(BlockId::cut_copper_slab()),
+        Item::ExposedCutCopperSlab => Some(BlockId::exposed_cut_copper_slab()),
+        Item::WeatheredCutCopperSlab => Some(BlockId::weathered_cut_copper_slab()),
+        Item::OxidizedCutCopperSlab => Some(BlockId::oxidized_cut_copper_slab()),
+        
+        Item::Deepslate => Some(BlockId::deepslate()),
+        Item::CobbledDeepslate => Some(BlockId::cobbled_deepslate()),
+        Item::PolishedDeepslate => Some(BlockId::polished_deepslate()),
+        Item::DeepslateBricks => Some(BlockId::deepslate_bricks()),
+        Item::DeepslateTiles => Some(BlockId::deepslate_tiles()),
+        Item::CrackedDeepslateBricks => Some(BlockId::cracked_deepslate_bricks()),
+        Item::CrackedDeepslateTiles => Some(BlockId::cracked_deepslate_tiles()),
+        Item::ChiseledDeepslate => Some(BlockId::chiseled_deepslate()),
+        Item::DeepslateCoalOre => Some(BlockId::deepslate_coal_ore()),
+        Item::DeepslateIronOre => Some(BlockId::deepslate_iron_ore()),
+        Item::DeepslateGoldOre => Some(BlockId::deepslate_gold_ore()),
+        Item::DeepslateDiamondOre => Some(BlockId::deepslate_diamond_ore()),
+        Item::DeepslateLapisOre => Some(BlockId::deepslate_lapis_ore()),
+        Item::DeepslateRedstoneOre => Some(BlockId::deepslate_redstone_ore()),
+        Item::DeepslateEmeraldOre => Some(BlockId::deepslate_emerald_ore()),
+        Item::DeepslateCopperOre => Some(BlockId::deepslate_copper_ore()),
+        
+        Item::AmethystBlock => Some(BlockId::amethyst_block()),
+        Item::BuddingAmethyst => Some(BlockId::budding_amethyst()),
+        Item::AmethystCluster => Some(BlockId::amethyst_cluster()),
+        
+        Item::TintedGlass => Some(BlockId::tinted_glass()),
+        
+        Item::MossBlock => Some(BlockId::moss_block()),
+        Item::MossCarpet => Some(BlockId::moss_carpet()),
+        
+        Item::DripstoneBlock => Some(BlockId::dripstone_block()),
+        Item::PointedDripstone => Some(BlockId::pointed_dripstone()),
+        
+        Item::RootedDirt => Some(BlockId::rooted_dirt()),
+        Item::HangingRoots => Some(BlockId::hanging_roots()),
+        Item::SporeBlossoms => Some(BlockId::spore_blossoms()),
+        Item::Azalea => Some(BlockId::azalea()),
+        Item::FloweringAzalea => Some(BlockId::flowering_azalea()),
+        Item::AzaleaLeaves => Some(BlockId::azalea_leaves()),
+        Item::FloweringAzaleaLeaves => Some(BlockId::flowering_azalea_leaves()),
+        
+        Item::LightningRod => Some(BlockId::lightning_rod()),
+        
+        Item::Candle => Some(BlockId::candle()),
+        Item::WhiteCandle => Some(BlockId::white_candle()),
+        Item::OrangeCandle => Some(BlockId::orange_candle()),
+        Item::MagentaCandle => Some(BlockId::magenta_candle()),
+        Item::LightBlueCandle => Some(BlockId::light_blue_candle()),
+        Item::YellowCandle => Some(BlockId::yellow_candle()),
+        Item::LimeCandle => Some(BlockId::lime_candle()),
+        Item::PinkCandle => Some(BlockId::pink_candle()),
+        Item::GrayCandle => Some(BlockId::gray_candle()),
+        Item::LightGrayCandle => Some(BlockId::light_gray_candle()),
+        Item::CyanCandle => Some(BlockId::cyan_candle()),
+        Item::PurpleCandle => Some(BlockId::purple_candle()),
+        Item::BlueCandle => Some(BlockId::blue_candle()),
+        Item::BrownCandle => Some(BlockId::brown_candle()),
+        Item::GreenCandle => Some(BlockId::green_candle()),
+        Item::RedCandle => Some(BlockId::red_candle()),
+        Item::BlackCandle => Some(BlockId::black_candle()),
+        
+        Item::BigDripleaf => Some(BlockId::big_dripleaf()),
+        Item::SmallDripleaf => Some(BlockId::small_dripleaf()),
+        
+        Item::SmoothBasalt => Some(BlockId::smooth_basalt()),
+        Item::Calcite => Some(BlockId::calcite()),
+        Item::TuffBlock => Some(BlockId::tuff_block()),
+        
+        Item::PowderSnow => Some(BlockId::powder_snow()),
+        
+        Item::GlowLichen => Some(BlockId::glow_lichen()),
+        
+        Item::RawIronBlock => Some(BlockId::raw_iron_block()),
+        Item::RawGoldBlock => Some(BlockId::raw_gold_block()),
+        Item::RawCopperBlock => Some(BlockId::raw_copper_block()),
+        
+        // Items that are not blocks return None
+        Item::RawIron => None,
+        Item::RawGold => None,
+        Item::RawCopper => None,
+        Item::CopperIngot => None,
+        Item::AmethystShard => None,
+        Item::Spyglass => None,
+        Item::PowderSnowBucket => None,
+        Item::AxolotlBucket => None,
+        Item::GlowInkSac => None,
+        Item::GlowItemFrame => None,
     }
 }
+
 pub fn block_to_item(block: BlockId) -> Option<Item> {
     match block.kind() {
         BlockKind::Air => Some(Item::Air),
@@ -1043,6 +1146,95 @@ pub fn block_to_item(block: BlockId) -> Option<Item> {
         BlockKind::GreenBanner => Some(Item::GreenBanner),
         BlockKind::RedBanner => Some(Item::RedBanner),
         BlockKind::BlackBanner => Some(Item::BlackBanner),
-        _ => None,
+        
+        // New 1.17 blocks
+        BlockKind::Copper => Some(Item::Copper),
+        BlockKind::ExposedCopper => Some(Item::ExposedCopper),
+        BlockKind::WeatheredCopper => Some(Item::WeatheredCopper),
+        BlockKind::OxidizedCopper => Some(Item::OxidizedCopper),
+        BlockKind::CutCopper => Some(Item::CutCopper),
+        BlockKind::ExposedCutCopper => Some(Item::ExposedCutCopper),
+        BlockKind::WeatheredCutCopper => Some(Item::WeatheredCutCopper),
+        BlockKind::OxidizedCutCopper => Some(Item::OxidizedCutCopper),
+        BlockKind::CutCopperStairs => Some(Item::CutCopperStairs),
+        BlockKind::ExposedCutCopperStairs => Some(Item::ExposedCutCopperStairs),
+        BlockKind::WeatheredCutCopperStairs => Some(Item::WeatheredCutCopperStairs),
+        BlockKind::OxidizedCutCopperStairs => Some(Item::OxidizedCutCopperStairs),
+        BlockKind::CutCopperSlab => Some(Item::CutCopperSlab),
+        BlockKind::ExposedCutCopperSlab => Some(Item::ExposedCutCopperSlab),
+        BlockKind::WeatheredCutCopperSlab => Some(Item::WeatheredCutCopperSlab),
+        BlockKind::OxidizedCutCopperSlab => Some(Item::OxidizedCutCopperSlab),
+        
+        BlockKind::Deepslate => Some(Item::Deepslate),
+        BlockKind::CobbledDeepslate => Some(Item::CobbledDeepslate),
+        BlockKind::PolishedDeepslate => Some(Item::PolishedDeepslate),
+        BlockKind::DeepslateBricks => Some(Item::DeepslateBricks),
+        BlockKind::DeepslateTiles => Some(Item::DeepslateTiles),
+        BlockKind::CrackedDeepslateBricks => Some(Item::CrackedDeepslateBricks),
+        BlockKind::CrackedDeepslateTiles => Some(Item::CrackedDeepslateTiles),
+        BlockKind::ChiseledDeepslate => Some(Item::ChiseledDeepslate),
+        BlockKind::DeepslateCoalOre => Some(Item::DeepslateCoalOre),
+        BlockKind::DeepslateIronOre => Some(Item::DeepslateIronOre),
+        BlockKind::DeepslateGoldOre => Some(Item::DeepslateGoldOre),
+        BlockKind::DeepslateDiamondOre => Some(Item::DeepslateDiamondOre),
+        BlockKind::DeepslateLapisOre => Some(Item::DeepslateLapisOre),
+        BlockKind::DeepslateRedstoneOre => Some(Item::DeepslateRedstoneOre),
+        BlockKind::DeepslateEmeraldOre => Some(Item::DeepslateEmeraldOre),
+        BlockKind::DeepslateCopperOre => Some(Item::DeepslateCopperOre),
+        
+        BlockKind::AmethystBlock => Some(Item::AmethystBlock),
+        BlockKind::BuddingAmethyst => Some(Item::BuddingAmethyst),
+        BlockKind::AmethystCluster => Some(Item::AmethystCluster),
+        
+        BlockKind::TintedGlass => Some(Item::TintedGlass),
+        
+        BlockKind::MossBlock => Some(Item::MossBlock),
+        BlockKind::MossCarpet => Some(Item::MossCarpet),
+        
+        BlockKind::DripstoneBlock => Some(Item::DripstoneBlock),
+        BlockKind::PointedDripstone => Some(Item::PointedDripstone),
+        
+        BlockKind::RootedDirt => Some(Item::RootedDirt),
+        BlockKind::HangingRoots => Some(Item::HangingRoots),
+        BlockKind::SporeBlossoms => Some(Item::SporeBlossoms),
+        BlockKind::Azalea => Some(Item::Azalea),
+        BlockKind::FloweringAzalea => Some(Item::FloweringAzalea),
+        BlockKind::AzaleaLeaves => Some(Item::AzaleaLeaves),
+        BlockKind::FloweringAzaleaLeaves => Some(Item::FloweringAzaleaLeaves),
+        
+        BlockKind::LightningRod => Some(Item::LightningRod),
+        
+        BlockKind::Candle => Some(Item::Candle),
+        BlockKind::WhiteCandle => Some(Item::WhiteCandle),
+        BlockKind::OrangeCandle => Some(Item::OrangeCandle),
+        BlockKind::MagentaCandle => Some(Item::MagentaCandle),
+        BlockKind::LightBlueCandle => Some(Item::LightBlueCandle),
+        BlockKind::YellowCandle => Some(Item::YellowCandle),
+        BlockKind::LimeCandle => Some(Item::LimeCandle),
+        BlockKind::PinkCandle => Some(Item::PinkCandle),
+        BlockKind::GrayCandle => Some(Item::GrayCandle),
+        BlockKind::LightGrayCandle => Some(Item::LightGrayCandle),
+        BlockKind::CyanCandle => Some(Item::CyanCandle),
+        BlockKind::PurpleCandle => Some(Item::PurpleCandle),
+        BlockKind::BlueCandle => Some(Item::BlueCandle),
+        BlockKind::BrownCandle => Some(Item::BrownCandle),
+        BlockKind::GreenCandle => Some(Item::GreenCandle),
+        BlockKind::RedCandle => Some(Item::RedCandle),
+        BlockKind::BlackCandle => Some(Item::BlackCandle),
+        
+        BlockKind::BigDripleaf => Some(Item::BigDripleaf),
+        BlockKind::SmallDripleaf => Some(Item::SmallDripleaf),
+        
+        BlockKind::SmoothBasalt => Some(Item::SmoothBasalt),
+        BlockKind::Calcite => Some(Item::Calcite),
+        BlockKind::TuffBlock => Some(Item::TuffBlock),
+        
+        BlockKind::PowderSnow => Some(Item::PowderSnow),
+        
+        BlockKind::GlowLichen => Some(Item::GlowLichen),
+        
+        BlockKind::RawIronBlock => Some(Item::RawIronBlock),
+        BlockKind::RawGoldBlock => Some(Item::RawGoldBlock),
+        BlockKind::RawCopperBlock => Some(Item::RawCopperBlock),
     }
 }

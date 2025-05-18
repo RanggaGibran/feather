@@ -23,6 +23,7 @@ pub type Slot = InventorySlot;
 #[derive(Copy, Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub enum ProtocolVersion {
     V1_16_2,
+    V1_17, // Add this new variant
 }
 
 /// A protocol state.

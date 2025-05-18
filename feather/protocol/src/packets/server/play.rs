@@ -1401,4 +1401,16 @@ packets! {
         name String;
         entries VarIntPrefixedVec<VarInt>;
     }
+
+    // New packet in 1.17
+    WorldBorderInitialize {
+        x f64;
+        z f64;
+        old_diameter f64;
+        new_diameter f64;
+        speed VarLong;
+        portal_teleport_boundary VarInt;
+        warning_time VarInt;
+        warning_blocks VarInt;
+    }
 }

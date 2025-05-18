@@ -4,8 +4,8 @@
 //! and Tokio. Contains a listener task which accepts new connections
 //! and a worker task for each client which reads and writes packets.
 
-pub const PROTOCOL_VERSION: u32 = 404;
-pub const SERVER_VERSION: &str = "Feather 1.13.2";
+pub const PROTOCOL_VERSION: u32 = 755; // Previously 404, updating to 755 (1.17)
+pub const SERVER_VERSION: &str = "Feather 1.17"; // Update version string
 
 #[macro_use]
 extern crate feather_core;
