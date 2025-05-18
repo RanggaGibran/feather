@@ -16,6 +16,7 @@ fn build_default(builder: &mut EntityBuilder) {
 pub mod area_effect_cloud;
 pub mod armor_stand;
 pub mod arrow;
+pub mod axolotl;
 pub mod bat;
 pub mod bee;
 pub mod blaze;
@@ -52,6 +53,8 @@ pub mod fox;
 pub mod furnace_minecart;
 pub mod ghast;
 pub mod giant;
+pub mod glow_squid;
+pub mod goat;
 pub mod guardian;
 pub mod hoglin;
 pub mod hopper_minecart;
@@ -232,5 +235,8 @@ pub fn add_entity_components(builder: &mut EntityBuilder, init: &EntityInit) {
         EntityInit::ZombifiedPiglin => zombified_piglin::build_default(builder),
         EntityInit::Player => player::build_default(builder),
         EntityInit::FishingBobber => fishing_bobber::build_default(builder),
+        EntityInit::Axolotl => axolotl::build_default(builder),
+        EntityInit::Goat => goat::build_default(builder),
+        EntityInit::GlowSquid => glow_squid::build_default(builder),
     }
 }

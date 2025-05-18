@@ -10,6 +10,7 @@ mod block_transitions;
 mod block_ticking;
 mod tick_executor;
 mod chunk_integration;
+mod block_entity;
 
 pub use block::BlockKind;
 pub use block_data::*;
@@ -22,6 +23,8 @@ pub use block_transitions::{BlockTransitionManager, BlockStateTransition, Transi
 pub use block_ticking::{BlockTickScheduler, BlockTick, TickType};
 pub use tick_executor::BlockTickExecutor;
 pub use chunk_integration::BlockWorldIntegration;
+pub use block_entity::{BlockEntity, BlockEntityKind, BlockEntityData, BlockEntityManager, BlockEntityValue, 
+                      create_block_entity, requires_block_entity, serialize_block_entity, deserialize_block_entity};
 
 // Add a convenience method to BlockKind
 impl BlockKind {
