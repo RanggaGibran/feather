@@ -6,6 +6,7 @@ mod simplified_block;
 mod block_properties;
 mod behaviors;
 mod registration;
+mod block_transitions;
 
 pub use block::BlockKind;
 pub use block_data::*;
@@ -14,6 +15,7 @@ pub use simplified_block::SimplifiedBlockKind;
 pub use block_properties::{BlockProperties, BlockBehavior, DefaultBlockBehavior};
 pub use behaviors::{DoorBehavior, ChestBehavior, RedstoneBehavior, get_behavior_for_block};
 pub use registration::BlockRegistry;
+pub use block_transitions::{BlockTransitionManager, BlockStateTransition, TransitionCondition};
 
 // Add a convenience method to BlockKind
 impl BlockKind {
@@ -144,4 +146,16 @@ pub fn initialize_block_registry() -> BlockRegistry {
     registry.register_behavior(BlockKind::RedstoneWire, behaviors::RedstoneBehavior);
     
     registry
+}
+
+/// Initializes a new BlockTransitionManager with default transitions
+pub fn initialize_block_transitions() -> BlockTransitionManager {
+    let mut manager = BlockTransitionManager::new();
+    
+    // Register copper transitions
+    block_transitions::register_copper_transitions(&mut manager);
+    
+    // Add more transition registrations here
+    
+    manager
 }
