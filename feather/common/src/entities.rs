@@ -124,6 +124,11 @@ pub mod zombie;
 pub mod zombie_horse;
 pub mod zombie_villager;
 pub mod zombified_piglin;
+pub mod metadata;
+pub mod interactions;
+pub mod pathfinding;
+pub mod components;
+pub mod spawning;
 
 pub fn add_entity_components(builder: &mut EntityBuilder, init: &EntityInit) {
     match init {
@@ -239,4 +244,13 @@ pub fn add_entity_components(builder: &mut EntityBuilder, init: &EntityInit) {
         EntityInit::Goat => goat::build_default(builder),
         EntityInit::GlowSquid => glow_squid::build_default(builder),
     }
+}
+
+pub fn register(systems: &mut SystemExecutor<Game>) {
+    behavior::register(systems);
+    metadata::register(systems);
+    interactions::register(systems);
+    pathfinding::register(systems);
+    spawning::register(systems);
+    // Other registrations...
 }
